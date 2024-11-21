@@ -23,7 +23,6 @@
 
             Piece piece = Board[pos];
             IEnumerable<Move> moveCandidates = piece.GetMoves(pos, Board);
-            //return piece.GetMoves(pos,Board);
             return moveCandidates.Where(move => move.IsLegal(Board));
         }
 
