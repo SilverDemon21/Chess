@@ -66,7 +66,10 @@
                 {
                     Position pos = new Position(i, j);
 
-                    if(!IsEmpty(pos)) yield return pos;
+                    if (!IsEmpty(pos))
+                    {
+                        yield return pos;
+                    }
                 }
             }
         }

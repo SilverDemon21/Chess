@@ -79,9 +79,9 @@
 
         public override bool CanCaptureOpponentKing(Position from, Board board)
         {
-            return DiagonalMoves(from, board).Any(Move =>
+            return DiagonalMoves(from, board).Any(move =>
             {
-                Piece piece = board[Move.ToPos];
+                Piece piece = board[move.ToPos];
                 return piece != null && piece.Type == PieceType.King;
             });
         }
