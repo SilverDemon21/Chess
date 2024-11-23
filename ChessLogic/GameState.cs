@@ -1,5 +1,6 @@
 ﻿namespace ChessLogic
 {
+    
     public class GameState
     {
         public Board Board {  get;  }
@@ -12,6 +13,8 @@
             CurrentPlayer = player;
             Board = board;
         }
+
+
 
         public IEnumerable<Move> LegalMovesForPiece(Position pos)
         { 
@@ -28,6 +31,14 @@
 
         public void MakeMove(Move move)
         {
+            if (Board[move.ToPos] == null)
+            {
+                SoundAffects.playMove();
+            }
+            else
+            {
+                SoundAffects.capturePiece();
+            }
             move.Execute(Board);
             CurrentPlayer = CurrentPlayer.Opponent();
             CheckForGameOver();
