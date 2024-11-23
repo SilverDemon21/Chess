@@ -39,6 +39,7 @@
             {
                 SoundAffects.capturePiece();
             }
+            Board.SetPawnSkipPosition(CurrentPlayer, null);
             move.Execute(Board);
             CurrentPlayer = CurrentPlayer.Opponent();
             CheckForGameOver();
